@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        html, body { margin: 0; padding: 0; }
+        .p { position: absolute; left: -99999999px; top: -999999999px; }
+    </style>
+    <script type="text/javascript">
+        function $(id) { return document.getElementById(id) }
+        window.onload = function () {
+            var img = $("ppp");
+            var canvas = document.createElement("canvas")
+            //canvas.style.position = "absolute";
+            //canvas.style.left = "0px";
+            //canvas.style.top = "0px"
+            canvas.style.width = img.width + "px"
+            canvas.style.height = img.height + "px";
+            canvas.width = img.width;
+            canvas.height = img.height;
+            document.body.appendChild(canvas);
+
+
+            var context = canvas.getContext("2d");
+            context.drawImage(img, 0, 0);
+
+
+
+            alert("分辨率:" + window.screen.width + "_" + window.screen.height
+                + "\n浏览器框大小:" + document.documentElement.clientWidth + "_" + document.documentElement.clientHeight);
+
+        }
+    </script>
+</head>
+<body>
+    <div class="p">
+        <img src="img/default.png" id="ppp" />
+    </div>
+
+
+</body>
+</html>
